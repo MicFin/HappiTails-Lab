@@ -9,5 +9,8 @@ class Animal
     @toys = []
   end
 
+  def toys
+    @toys
+  end
 end
 
