@@ -83,114 +83,120 @@ shelter_1.delete_animal(molly)
 shelter_1.add_animal(scrunchy)
 sue.delete_pet(scrunchy)
 
-# # Show shelter total info
-# puts shelter_1
+# Show shelter total info
+puts shelter_1
 
-# # Show animals in the shelter
-# puts shelter_1.show_animals
+# Show animals in the shelter
+puts shelter_1.show_animals
 
-# # Show clients in the shelter
-# puts shelter_1.show_clients
+# Show clients in the shelter
+puts shelter_1.show_clients
 
-# # Show client total info
-# puts jill
+# Show client total info
+puts jill
 
-# # Show a client's pets
-# puts sue.show_pets
+# Show a client's pets
+puts sue.show_pets
 
-# # Show a pet's total info
-# puts scrunchy
+# Show a pet's total info
+puts scrunchy
 
-# # Show a pet's toys
-# puts scrunchy.show_toys
+# Show a pet's toys
+puts scrunchy.show_toys
 
 
 
-# INITIAL PROMPT FOR GAME
-puts "\nWelcome to the HappiTails Shelter!!!!!!"
-begin_game_choice = ""
+# # INITIAL PROMPT FOR GAME
+# puts "\nWelcome to the HappiTails Shelter!!!!!!"
+# begin_game_choice = ""
+# # until begin_game_choice == "exit"
 # until begin_game_choice == "exit"
-until begin_game_choice == "exit"
- puts "\nIf you'd like to take a look around then please take a second to [see] what is going on at the shelter.  When you are ready, please choose to play as the [shelter] manager or as a pet [owner]. Oh and if you're grouchy then the [exit] is that way!"
-begin_game_choice = gets.chomp.downcase
-case begin_game_choice
-  when "see"
-    puts
-    puts shelter_1
-    view_characters = ""
-    until view_characters == "begin"
-      puts "\nWould you like to learn more about [Bob], [Sue], or [Sam]? Or, maybe you would prefer to learn more about [Antsy] or [Scrunchy]? If not then just [begin] your journey at HappiTrails Shelter."
-      view_characters = gets.chomp.downcase
-      case view_characters
-        when "bob"
-          puts
-          puts bob
-          puts "\nWould you like to know more about Fido and Lassy? (yes or no)"
-          pet_info = gets.chomp.downcase
-          if pet_info == "yes"
-            puts
-            puts fido
-            puts lassy
-          end
-        when "sue"
-          puts
-          puts sue
-          puts "\nWould you like to know more about Jonesy and Molly? (yes or no)"
-          pet_info = gets.chomp.downcase
-          if pet_info == "yes"
-            puts
-            puts jonesy
-            puts molly
-          end
-        when "sam"
-          puts
-          puts sam
-          puts "\nWould you like to know more about Rux? (yes or no)"
-          pet_info = gets.chomp.downcase
-          if pet_info == "yes"
-            puts
-            puts rux
-          end
-        when "antsy"
-          puts
-          puts antsy
-        when "scrunchy"
-          puts
-          puts scrunchy
-      end
-    end
+#  puts "\nIf you'd like to take a look around then please take a second to [see] what is going on at the shelter.  When you are ready, please choose to play as the [shelter] manager or as a pet [owner]. Oh and if you're grouchy then the [exit] is that way!"
+# begin_game_choice = gets.chomp.downcase
+# case begin_game_choice
+#   when "see"
+#     puts
+#     puts shelter_1
+#     view_characters = ""
+#     until view_characters == "begin"
+#       puts "\nWould you like to learn more about [Bob], [Sue], or [Sam]? Or, maybe you would prefer to learn more about [Antsy] or [Scrunchy]? If not then just [begin] your journey at HappiTrails Shelter."
+#       view_characters = gets.chomp.downcase
+#       case view_characters
+#         when "bob"
+#           puts
+#           puts bob
+#           puts "\nWould you like to know more about Fido and Lassy? (yes or no)"
+#           pet_info = gets.chomp.downcase
+#           if pet_info == "yes"
+#             puts
+#             puts fido
+#             puts lassy
+#           end
+#         when "sue"
+#           puts
+#           puts sue
+#           puts "\nWould you like to know more about Jonesy and Molly? (yes or no)"
+#           pet_info = gets.chomp.downcase
+#           if pet_info == "yes"
+#             puts
+#             puts jonesy
+#             puts molly
+#           end
+#         when "sam"
+#           puts
+#           puts sam
+#           puts "\nWould you like to know more about Rux? (yes or no)"
+#           pet_info = gets.chomp.downcase
+#           if pet_info == "yes"
+#             puts
+#             puts rux
+#           end
+#         when "antsy"
+#           puts
+#           puts antsy
+#         when "scrunchy"
+#           puts
+#           puts scrunchy
+#       end
+#     end
  
-  when "shelter" ## Create game from shelter view
+#   when "shelter" ## Create game from shelter view
 
-  when "owner" ## Create game from pet owner view 
-    puts "Would you like to play as [Bob], [Sue], [Sam] or a [new] pet owner?"
-    choose_player = gets.chomp.downcase
-    if choose_player == "new"
-      puts "What is your player's name?"
-      new_name = gets.chomp
-      puts "How old is your player?"
-      new_age = gets.chomp
-      puts "How many pets does your player have?"
-      new_num_pets = gets.chomp.to_i
-      new_player = Person.new(new_name, new_age, new_num_pets)
-    #if new_num_pets > 0
-    for i in (1..new_num_pets) do 
-      puts "What is pet #{i}'s name?"
-      new_pet_name = gets.chomp 
-      puts "What is pet #{i}'s species?"
-      new_pet_species = gets.chomp
-      puts "What is pet #{i}'s age?"
-      new_pet_age = gets.chomp 
-      puts "What is pet #{i}'s gender?"
-      new_pet_gender = gets.chomp
-      end
-    #end
-    end
+#   when "owner" ## Create game from pet owner view 
+#     puts "Would you like to play as [Bob], [Sue], [Sam] or a [new] pet owner?"
+#     choose_player = gets.chomp.downcase
+#     if choose_player == "new"
+#       puts "What is your player's name?"
+#       new_name = gets.chomp
+#       puts "How old is your player?"
+#       new_age = gets.chomp
+#       puts "How many pets does your player have?"
+#       new_num_pets = gets.chomp.to_i
+#       new_player = Person.new(new_name, new_age, new_num_pets)
+#     #if new_num_pets > 0
+#     for i in (1..new_num_pets) do 
+#       puts "What is pet #{i}'s name?"
+#       new_pet_name = gets.chomp 
+#       puts "What is pet #{i}'s species?"
+#       new_pet_species = gets.chomp
+#       puts "What is pet #{i}'s age?"
+#       new_pet_age = gets.chomp 
+#       puts "What is pet #{i}'s gender?"
+#       new_pet_gender = gets.chomp
+#       new_pet = Animal.new(new_pet_name, new_pet_age, new_pet_gender, new_pet_species)
+#       end
+
+#     #end
+#     end
   
-end
+# end
 
-end
- abort"\nGoodbye" 
+# end
+#  abort"\nGoodbye" 
+
+
+
+
 # # NEW CLIENT
 # new_name = gets.chomp
 # new_age = gets.chomp
