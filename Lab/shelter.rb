@@ -1,3 +1,7 @@
+
+require_relative 'person'
+
+
 class Shelter
   attr_accessor :name, :address
 
@@ -24,7 +28,7 @@ class Shelter
     @clients.delete(client_name.name)
   end
 
- def to_s
+  def to_s
     "The #{name} shelter is located at #{address}.\n#{show_clients} \n#{show_animals}"
   end
 

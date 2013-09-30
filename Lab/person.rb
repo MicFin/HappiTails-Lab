@@ -1,3 +1,5 @@
+require_relative 'animal'
+
 class Person
   attr_accessor :name, :age, :num_pets
 
