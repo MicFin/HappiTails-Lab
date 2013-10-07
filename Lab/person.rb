@@ -1,7 +1,7 @@
 require_relative 'animal'
 
 class Person
-  attr_accessor :name, :age, :num_pets
+  attr_accessor :name, :age, :num_pets, :pets 
 
   def initialize(name, age, num_pets)
     @name = name
@@ -11,13 +11,13 @@ class Person
   end
 
   def add_pet(pet)
-    @pets[pet.name] = pet
     @num_pets += 1
+    @pets[pet.name] = pet
   end
  
   def delete_pet(animal_name)
-    @pets.delete(animal_name.name)
     @num_pets -= 1
+    @pets.delete(animal_name.name)
   end
 
   def to_s
