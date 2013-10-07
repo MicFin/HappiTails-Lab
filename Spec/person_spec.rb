@@ -4,6 +4,7 @@ require_relative '../Lab/animal'
 
 describe Person do 
   let(:animal) {Animal.new('Jones', 4, 'male', 'dog')}
+  let(:animal2) {Animal.new('Ruff', 3, 'male', 'cat')}
   subject {Person.new('Tom', 42, 0) }
 
   # checks if adopt method works
@@ -42,12 +43,12 @@ describe Person do
 
      # checks if to_s method works with a pet
     it "should show clients name, age, num pets, and pet name" do 
-      subject.to_s should eq "Tom is 42 and has 1 pets. Tom's pets are Jones."
+      subject.to_s.should eq "Tom is 42 years old and has 1 pets. Tom's pets are Jones."
     end
   end
 
   it "should be able to delete a pet" do
-    subject.delete_pet(animal).should eq animal
+    subject.delete_pet(animal).should eq nil
   end
 
   
@@ -56,27 +57,28 @@ describe Person do
     # creates a person with a pet to then do the following tests # shorthand
     before do 
       subject.add_pet(animal)
+      subject.add_pet(animal2)
       subject.delete_pet(animal)
     end
 
     # checks if delete method removes a pet
     it "should delete an animal to the Persons pets" do  
-      subject.pets.size.should eq 0
+      subject.pets.size.should eq 1
     end
 
     # checks if delete method increases the persons pets count
     it "should decrease the Persons pets count" do 
-      subject.num_pets.should eq 0
+      subject.num_pets.should eq 1
     end
 
     #checks if show pets works with no pets
     it "should show user has no pets" do 
-      puts subject.show_pets.should eq "Tom currently has no pets."
+      subject.show_pets.should eq "Tom's pets are Ruff."
     end
 
     # checks if to_s method works with no pet
     it "should show clients name, age, num pets, and pet name" do 
-      puts subject should eq "Tom is 42 and has 0 pets. Tom currently has no pets."
+      subject.to_s.should eq "Tom is 42 years old and has 1 pets. Tom's pets are Ruff."
     end
   end
 
